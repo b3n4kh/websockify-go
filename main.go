@@ -45,7 +45,14 @@ func ws(w http.ResponseWriter, r *http.Request) {
 		defer log.Println("Run once! so good bye")
 		defer os.Exit(0)
 	}
-	upgrader := websocket.Upgrader{}
+	
+
+    upgrader := websocket.Upgrader{
+        CheckOrigin: func(r *http.Request) bool {return true}} // Default
+
+
+
+
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println("error in accepting websokcet", err)
