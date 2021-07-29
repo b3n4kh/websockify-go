@@ -1,5 +1,5 @@
-module github.com/miladj/websockify-go
+module github.com/b3n4kh/websockify-go
 
-go 1.12
+go 1.16
 
 require github.com/gorilla/websocket v1.4.2
